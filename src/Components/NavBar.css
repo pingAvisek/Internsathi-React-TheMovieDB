@@ -1,0 +1,22 @@
+nav {
+  padding: 1rem 0.5rem;
+  background-color: rgba(34, 124, 112, 0.3);
+  box-shadow: 0 0 10px rgba(34, 124, 112, 0.4);
+  margin-bottom: 2rem;
+}
+
+nav h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+nav h1:hover {
+  color: var(--primary-color);
+}
+
+nav .nav-links a svg {
+  font-size: 1.6rem;
+}
+
+nav .nav-links a svg:hover {
+  color: var(--primary-color);
+}

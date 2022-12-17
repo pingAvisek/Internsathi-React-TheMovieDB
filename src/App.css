@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+/* Font Link */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  /* color: var(--white-color); */
+  /* background-color: var(--dark-color); */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --primary-color: #227c70;
+  --dark-color: #000;
+  --white-color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.left-right {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--white-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a:visited {
+  color: var(--dark-color);
+}
+
+::selection {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+button,
+.btn-primary {
+  outline: none;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #00a592;
+  color: var(--white-color);
+  border: 2px solid #00a592;
+}
+
+.btn-primary:active {
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--white-color);
+  color: var(--dark-color);
+  border: 2px solid var(--primary-color);
+  transition: all 0.1s ease-in-out;
+}
+
+.btn-secondary:active {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: 2px solid var(--primary-color);
+}
+
+.spaces {
+  margin-bottom: 0.7rem;
 }

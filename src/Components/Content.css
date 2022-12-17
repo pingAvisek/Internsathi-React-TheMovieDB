@@ -1,0 +1,25 @@
+.form-area #user-title {
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.form-area input[type="text"] {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--primary-color);
+  outline: none;
+  margin-bottom: 1rem;
+}
+
+.form-area .left-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-area .left-right button {
+  margin: 1rem;
+}

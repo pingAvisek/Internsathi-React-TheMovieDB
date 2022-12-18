@@ -32,34 +32,50 @@ const MovieCard = () => {
       );
   }, []);
 
-  return (
-    <div className="movie-list-card container">
-      <div className="movie-list-card-img item">
-        <img src={data.Poster} alt="movie poster" />
+  if (error) {
+    return (
+      <div className="container">
+        <h2 style={{ color: "#ff0000" }}>Sorry, can't retrive data!</h2>
       </div>
-      <div className="movie-list-card-desc item">
-        <div className="title-rating left-right spaces">
-          <h2>{data.Title}</h2>
+    );
+  } else if (!isLoaded) {
+    return (
+      <div className="container">
+        <h3 style={{ color: "var(--primary-color)" }}>
+          Waiting for data to be fetched...
+        </h3>
+      </div>
+    );
+  } else {
+    return (
+      <div className="movie-list-card container">
+        <div className="movie-list-card-img item">
+          <img src={data.Poster} alt="movie poster" />
         </div>
-        <p className="spaces">
-          <AiOutlineCalendar /> {data.Released}
-        </p>
-        <p className="spaces">{data.Plot}</p>
-        <p>
-          <GrLanguage /> {data.Country}
-        </p>
-      </div>
-      <div className="movie-list-card-info item">
-        <Link to={"/"}>
-          <button className="btn-primary">Back to Home</button>
-        </Link>
+        <div className="movie-list-card-desc item">
+          <div className="title-rating left-right spaces">
+            <h2>{data.Title}</h2>
+          </div>
+          <p className="spaces">
+            <AiOutlineCalendar /> {data.Released}
+          </p>
+          <p className="spaces">{data.Plot}</p>
+          <p>
+            <GrLanguage /> {data.Country}
+          </p>
+        </div>
+        <div className="movie-list-card-info item">
+          <Link to={"/"}>
+            <button className="btn-primary">Back to Home</button>
+          </Link>
 
-        <Link to={"/moviesList"}>
-          <button className="btn-secondary">Go Back</button>
-        </Link>
+          <Link to={"/moviesList"}>
+            <button className="btn-secondary">Go Back</button>
+          </Link>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default MovieCard;

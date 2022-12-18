@@ -10,7 +10,7 @@ const MoviesList = ({ search }) => {
 
   const dataFetchedRef = useRef(false);
   let APIKEY = "5499e4e";
-  let userTitle = { search };
+  let userTitle = search;
 
   useEffect(() => {
     if (dataFetchedRef.current) return;

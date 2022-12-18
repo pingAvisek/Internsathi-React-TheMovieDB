@@ -10,7 +10,10 @@ const MoviesList = ({ search }) => {
 
   const dataFetchedRef = useRef(false);
   let APIKEY = "5499e4e";
-  let userTitle = search;
+
+  // removing last space in a string
+
+  let userTitle = search.trim();
 
   useEffect(() => {
     if (dataFetchedRef.current) return;
@@ -63,7 +66,9 @@ const MoviesList = ({ search }) => {
     } else {
       return (
         <div className="container left-right">
-          <h2 style={{ color: "#ff0000" }}>Sorry, No related data found!</h2>
+          <h2 style={{ color: "#ff0000" }}>
+            Sorry, No related data found for {userTitle}!
+          </h2>
           <Link to="/">
             <button className="btnPrimary">Go Back</button>
           </Link>

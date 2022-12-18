@@ -1,17 +1,26 @@
-import React from "react";
 import "./Content.css";
 import { useRef } from "react";
-import { useState } from "react";
-import MovieList from "./MovieList";
+import React, { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Content = () => {
-  const [title, setTitle] = useState("");
+const Content = ({ search, setSearch }) => {
   const inputRef = useRef("");
+  const navigate = useNavigate();
+  const handleClick = useCallback(
+    () => navigate("/moviesList", { replace: true }),
+    [navigate]
+  );
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    handleClick();
+  }
+
   return (
     <main>
       <div className="container">
         <div className="form-area">
-          <form>
+          <form onSubmit={(e) => handleSubmit(e)}>
             <label htmlFor="title-of-the-movie" id="user-title">
               Title of the Movie:
             </label>
@@ -23,24 +32,15 @@ const Content = () => {
               minLength={3}
               autoFocus={true}
               ref={inputRef}
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
               required
             />
             <div className="btn-area left-right">
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (title.length < 3) {
-                    return;
-                  }
-                  setTitle("");
-                }}
-                type="submit"
-                className="btn-primary"
-              >
+              <button type="submit" className="btn-primary">
                 Search
               </button>
+
               <button
                 onClick={() => inputRef.current.focus()}
                 className="btn-secondary"
@@ -51,7 +51,6 @@ const Content = () => {
             </div>
           </form>
         </div>
-        <MovieList />
       </div>
     </main>
   );

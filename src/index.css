@@ -1,6 +1,11 @@
 /* Font Link */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
+/* 1C315E */
+/* 227C70 */
+/* 88A47C */
+/* E6E2C3 */
+
 * {
   margin: 0;
   padding: 0;
@@ -85,4 +90,10 @@ button,
 
 .spaces {
   margin-bottom: 0.7rem;
+}
+
+.underline {
+  border-bottom: 2px solid var(--primary-color);
+  width: max-content;
+  margin-bottom: 2rem;
 }

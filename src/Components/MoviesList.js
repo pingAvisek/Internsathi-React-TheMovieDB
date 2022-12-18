@@ -47,11 +47,11 @@ const MoviesList = ({ search }) => {
       </div>
     );
   } else {
-    if (items.Response === "True") {
+    if (items.Response === "True" && items.Search.length > 0) {
       return items.Search.map((result, i) => {
         return (
           <div className="container movies-list spaces" key={i}>
-            <h3 className="spaces">Title of the Movie: {result.Title}</h3>
+            <h3 className="spaces">{result.Title}</h3>
             <p className="spaces">Year: {result.Year}</p>
             <p className="spaces">imdbID: {result.imdbID}</p>
             <Link to="/movieCard" state={{ id: result.imdbID }}>
@@ -60,6 +60,15 @@ const MoviesList = ({ search }) => {
           </div>
         );
       });
+    } else {
+      return (
+        <div className="container left-right">
+          <h2 style={{ color: "#ff0000" }}>Sorry, No related data found!</h2>
+          <Link to="/">
+            <button className="btnPrimary">Go Back</button>
+          </Link>
+        </div>
+      );
     }
   }
 };

@@ -31,6 +31,9 @@ const MovieCard = () => {
         }
       );
   }, []);
+  {
+    console.log(data);
+  }
 
   if (error) {
     return (
@@ -50,11 +53,15 @@ const MovieCard = () => {
     return (
       <div className="movie-list-card container">
         <div className="movie-list-card-img item">
-          <img src={data.Poster} alt="movie poster" />
+          <img src={data.Poster} alt="Opps! Can't fetch image URL" />
         </div>
         <div className="movie-list-card-desc item">
-          <div className="title-rating left-right spaces">
-            <h2>{data.Title}</h2>
+          <div className="title-rating spaces">
+            <h2 className="spaces">{data.Title}</h2>
+            <p className="spaces">
+              <b>Cast Members: </b>
+              {data.Actors}
+            </p>
           </div>
           <p className="spaces">
             <AiOutlineCalendar /> {data.Released}

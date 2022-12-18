@@ -30,6 +30,7 @@
 
 .movie-list-card-info button {
   width: max-content;
+  display: block;
 }
 
 /* media queries for 900 px  */
@@ -66,5 +67,5 @@
 }
 
 .btn-primary {
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
 }

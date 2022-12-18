@@ -42,7 +42,9 @@ const Content = ({ search, setSearch }) => {
               </button>
 
               <button
-                onClick={() => inputRef.current.focus()}
+                onClick={() => {
+                  setSearch("");
+                }}
                 className="btn-secondary"
                 type="reset"
               >
